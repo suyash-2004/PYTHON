@@ -1,0 +1,89 @@
+# write a menu driven driven to perform the following operations on a binary file:-
+# write data into file 
+# read data from file 
+# append data into file 
+# search record in a file 
+# update data in a file 
+
+
+# write data into file - 1 
+# read data from file  - 2 
+# append data into file - 3
+# search record in a file - 4
+# update data in a file - 5
+
+# choice = int(input("enter your choice"))
+
+
+import pickle
+
+def writedata():
+        f = open("C:\\Users\suyas\Desktop\PYTHON\File handaling ques\\text files\\cs.tect","wb")
+        num = int(input("how many records"))
+        lst = []
+        for i in range(num):
+            roll = int(input("enter the roll"))
+            class_ = int(input("enter the class"))
+            mrks = int(input("enter the marks"))
+            name = input("enter the name")
+            l1=[roll,class_,mrks,name]
+            lst.append(l1)
+            print(lst)
+        pickle.dump(lst,f)
+        print("data dumped")
+        f.close()
+        
+def read_():
+        f = open("C:\\Users\suyas\Desktop\PYTHON\File handaling ques\\text files\\cs.tect","rb")
+        p = pickle.load(f)
+        for i in p:
+           print(i)
+        f.close()
+        
+def append_():
+        f = open("C:\\Users\suyas\Desktop\PYTHON\File handaling ques\\text files\\cs.tect","rb+")
+        lst2=list(input("enter the data in the following format : roll,class,marks"))
+        pickle.dump(lst2,f)
+        p = pickle.load(f)
+        print(p)
+        print("data appended")
+        f.close()    
+
+def search_():
+    srch = input("what is to be searched? :")
+    f = open("C:\\Users\suyas\Desktop\PYTHON\File handaling ques\\text files\\cs.tect","rb+")
+    p = pickle.load(f)
+    lst = [p]
+    for i in lst:
+        if i == srch:
+            print(i)
+        else:
+            print("not found")
+
+
+
+ch = "yes"
+while ch == "yes":
+    
+    func = input("enter the function")
+    if func == "write":
+        writedata()
+    elif func == "read":
+        read_()
+    elif func == "append":
+        append_()
+    elif func == "search":
+        search_()
+    
+    else:
+        print("invalid function")
+    
+    ch = input("again?")
+    if ch == "yes":
+        pass
+    elif ch == "no":
+        ch = "no"
+        print("program ended")
+    else:
+        print("program ended")
+
