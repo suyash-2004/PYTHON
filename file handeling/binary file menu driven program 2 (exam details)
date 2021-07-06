@@ -1,0 +1,65 @@
+import pickle
+def writedata():
+        f = open("C:\\Users\suyas\Desktop\PYTHON\File handaling ques\text files\\EXAM.dat","wb")
+        num = int(input("how many records"))
+        global lst
+        lst = []
+        for i in range(num):
+            EXAM_ID= int(input("enter the Exam id : "))
+        
+            EXAM_NAME = input("enter the Exam name : ")
+        
+            DATE = int(input("enter the Date : "))
+        
+            CANDIDATES = int(input("enter the Total number of Candidates : "))
+        
+            l1=[EXAM_ID, EXAM_NAME,DATE,CANDIDATES]
+            lst.append(l1)
+            print(lst)
+        pickle.dump(lst,f)
+        print("data dumped")
+        f.close()
+def read_():
+        f = open("C:\\Users\suyas\Desktop\PYTHON\File handaling ques\text files\\EXAM.dat","rb")
+        p = pickle.load(f)
+        
+        for i in p:
+          print(i)
+        f.close()     
+
+def search_():
+        f = open("C:\\Users\suyas\Desktop\PYTHON\File handaling ques\text files\\EXAM.dat","rb")
+        p = pickle.load(f)
+        sm = 0
+        print("exam detailos having more than 1000 candidates are : ")
+        for i in p:
+           if i[3] > 1000:
+               print(i)
+               sm = sm + i[3]
+           else:
+               sm = sm + i[3]
+        
+        print("total number of candidates are : ",sm)
+        
+        f.close()     
+ch = "yes"
+while ch == "yes":
+    
+    func = input("enter the function")
+    if func == "write":
+        writedata()
+    elif func == "read":
+        read_()
+    elif func == "search":
+        search_()
+    else:
+        print("invalid function")
+    
+    ch = input("again?")
+    if ch == "yes":
+        pass
+    elif ch == "no":
+        ch = "no"
+        print("program ended")
+    else:
+        print("program ended")
