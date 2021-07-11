@@ -1,0 +1,32 @@
+import pickle
+def writedata():
+        f = open("C:\\Users\suyas\Desktop\PYTHON\\File handaling ques\\text files\\student details","wb")
+        num = int(input("how many records"))
+        global lst
+        lst = []
+        for i in range(num):
+            item_number = input("enter the item number : ")
+        
+            name = input("enter the roll name : ")
+        
+            quantity = int(input("enter the quantity : "))
+            
+            price = int(input("enter the price : "))
+    
+        
+            l1=[item_number,name,quantity,price]
+            lst.append(l1)
+            print(lst)
+        pickle.dump(lst,f)
+        print("data dumped")
+        f.close()    
+def srch():    
+        f = open("C:\\Users\suyas\Desktop\PYTHON\\File handaling ques\\text files\\student details","rb")
+        p = pickle.load(f)
+        print("details of items between the range of 10000 and 60000 : ")
+        for i in p:
+            if i[3] >10000 and i[3] < 60000:
+                print(i)
+        f.close()          
+writedata()
+srch()
