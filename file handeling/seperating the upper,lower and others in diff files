@@ -1,0 +1,18 @@
+f = open("C:\\Users\suyas\Desktop\PYTHON\\File handaling ques\\text files\\data.txt","r")
+f1 = open("C:\\Users\suyas\Desktop\PYTHON\\File handaling ques\\text files\\lower.txt","r")  
+f2 = open("C:\\Users\suyas\Desktop\PYTHON\\File handaling ques\\text files\\upper.txt","r")
+f3 = open("C:\\Users\suyas\Desktop\PYTHON\\File handaling ques\\text files\\others.txt","r") 
+x = f.read()
+for i in x :
+    if i.isupper():
+        f2.write(i)
+    elif i.islower():
+        f1.write(i)
+    else:
+        f3.write(i)
+print("data written")
+f.close()
+f1.close()
+f2.close()
+f3.close()
+     
