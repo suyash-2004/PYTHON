@@ -1,0 +1,26 @@
+import pickle
+def write():
+        f = open("C:\\Users\suyas\Desktop\PYTHON\\File handaling ques\\text files\\replace","wb")
+        dta = input("give the data to be written : ")
+        pickle.dump(dta,f)
+        f.close()
+
+def cnvrt():    
+        f = open("C:\\Users\suyas\Desktop\PYTHON\\File handaling ques\\text files\\replace","rb")
+        p = pickle.load(f)
+        lst = p
+        str = ""
+        print("entered data : ",lst)
+        for i in lst:
+            if i.isupper():
+                i = i.lower()
+                str += i
+            elif i.islower():
+                i = i.upper()
+                str += i
+        print("replaced data : ", str)
+        print(str)
+        f.close()    
+        
+write()
+cnvrt()
