@@ -1,0 +1,28 @@
+import pickle    #module for binary files
+# pickle.dump()    # to feed data
+# pickle.load()    # to import data
+# flush()         
+
+#"r" => 'rb' this is for binary read
+#"w" => 'wb' this is for binary write
+
+def binary(lst):
+    f = open("C:\\Users\suyas\Desktop\\text.dat","wb")
+    
+    pickle.dump(lg  , f)
+    print("done")
+    f.close()
+
+
+def func():
+
+    f = open("c:\\users\suyas\desktop\\text.dat","rb")
+    p = pickle.load(f)
+    print("done")
+    pickle.dump(lg,f)
+    f.close()
+
+lg = ["hello","hi","this is cs"]
+
+binary(lg)
+func(lg)
