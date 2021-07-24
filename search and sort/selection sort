@@ -1,0 +1,12 @@
+lst = list(input("enter the list"))
+sorted=[]
+for i in range(len(lst)):
+    smallest_num=int(lst[i])
+    if int(lst[i])<smallest_num :
+        smallest_num=lst[i] 
+    else:
+        pass
+sorted.append(smallest_num)
+
+
+print(smallest_num)
