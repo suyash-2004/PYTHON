@@ -1,0 +1,11 @@
+str1 = input("enter the string")
+ucount = 0
+for i in range(0,4):
+    if str1[i].isupper():
+        ucount = ucount + 1
+    else :
+        pass
+if ucount>=2:
+    print(str1.upper())
+else:
+    print(str1)
